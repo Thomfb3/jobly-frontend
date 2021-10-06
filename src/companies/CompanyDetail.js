@@ -1,13 +1,35 @@
-import React, { useState, useContext } from "react";
+import React, { useEffect, useState }from "react";
+import { useParams } from "react-router-dom";
+import JoblyApi from "../api/api";
+import LoadingSpinner from "../common/LoadingSpinner";
+import JobCardList from "../jobs/JobCardList";
 
 
 
 function CompanyDetail() {
+    const { handle } = useParams();
+    console.debug("CompanyCard", "handle=", handle );
+
+    const [company, setCompany] = useState(null);
+
+    useEffect(() => {
+        async function getCompany() {
+            setCompany(await JoblyApi.getCompany(handle));
+        };
+
+        getCompany();
+    }, [handle]);
+
+    if (!company) return <LoadingSpinner />;
+
     return (
-        <div> 
-            Company Details
+        <div>
+            <h4>{company.name}</h4>
+            <p>{company.description}</p>
+            <JobCardList jobs={company.jobs} />
         </div>
     );
-;}
+};
+
 
 export default CompanyDetail;

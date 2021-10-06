@@ -21,9 +21,7 @@ class JoblyApi {
     //this has been provided to show you another way to pass the token. you are only expected to read this code for this project.
     const url = `${BASE_URL}/${endpoint}`;
     const headers = { Authorization: `Bearer ${JoblyApi.token}` };
-    const params = (method === "get")
-      ? data
-      : {};
+    const params = (method === "get") ? data : {};
 
     try {
       return (await axios({ url, method, data, params, headers })).data;
@@ -45,7 +43,7 @@ class JoblyApi {
 
   /** Get companies filtered by name */
   static async getCompanies(name) {
-    let res = await this.request("companie", { name });
+    let res = await this.request("companies", { name });
     return res.companies;
   };
 

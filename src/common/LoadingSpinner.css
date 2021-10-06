@@ -1,0 +1,24 @@
+
+.LoadingSpinner {
+    border: 5px solid #f3f3f3; /* Light grey */
+    border-top: 5px solid blue; /* Blue */
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    animation: spin .5s cubic-bezier(0.05, 0.74, 0.28, 0.99) infinite;
+    margin: auto;
+    margin-top: 100px;
+ }
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+.LoadingSpinner-message {
+    text-align: center;
+    color: blue;
+    padding-left: 12px;
+}
