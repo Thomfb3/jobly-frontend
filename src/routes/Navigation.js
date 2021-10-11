@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import UserContext from "../auth/UserContext";
+import "./Navigation.css";
 
 
 function Navigation({ logout }) {
@@ -26,7 +27,7 @@ function Navigation({ logout }) {
                 </li>
                 <li>
                     <NavLink to="/" onClick={logout}>
-                        Logout {currentUser.first_name || currentUser.username}
+                        Logout <small>{currentUser.first_name || currentUser.username}</small>
                     </NavLink>
                 </li>
             </ul>
@@ -51,10 +52,12 @@ function Navigation({ logout }) {
     };
 
     return (
-        <nav>
-            <Link to="/">
-                Jobly
-            </Link>
+        <nav className="Navigation">
+            <div className="Navigation-logo-box">
+                <Link to="/" className="Navigation-logo">
+                    Jobly
+                </Link>
+            </div>
 
             {currentUser ? loggedInNav() : loggedOutNav()}
         </nav>

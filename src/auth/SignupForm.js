@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-
+import Alert from "../common/Alert";
 
 function SignupForm({ signup }) {
     const history = useHistory();
@@ -14,7 +14,6 @@ function SignupForm({ signup }) {
     });
 
     const [formErrors, setFormErrors] = useState([]);
-
 
     console.debug(
         "SignupForm",
@@ -41,49 +40,82 @@ function SignupForm({ signup }) {
 
 
     return (
-        <div>
-            Signup Form
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username</label>
-                <input
-                    name="username"
-                    type="text"
-                    value={formData.username}
-                    onChange={handleChange}
-                />
-                <label htmlFor="password">Password</label>
-                <input
-                    name="password"
-                    value={formData.password}
-                    onChange={handleChange}
-                />
-                <label htmlFor="firstName">First Name</label>
-                <input
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleChange}
-                />
-                <label htmlFor="lastName">Last Name</label>
-                <input
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleChange}
-                />
-                <label htmlFor="email">Email</label>
-                <input
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                />
+        <div className="Form-container">
+            <h3 className="Form-title">Signup Form</h3>
+            <form className="Form" onSubmit={handleSubmit}>
 
-                {formErrors.length ? <p>{formErrors}</p> : null}
+                <div className="Form-group">
 
-                <button
-                    type="submit"
-                    onSubmit={handleSubmit}
-                >
-                    Register
-                </button>
+                    <input
+                        type="text"
+                        className="Form-input"
+                        placeholder="  "
+                        name="username"
+                        value={formData.username}
+                        onChange={handleChange}
+                        required
+                    />
+                    <label className="Form-label" htmlFor="username">Username</label>
+                </div>
+                <div className="Form-group">
+                    <input
+                        type="password"
+                        className="Form-input"
+                        placeholder="  "
+                        name="password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                    />
+                    <label className="Form-label" htmlFor="password">Password</label>
+                </div>
+                <div className="Form-group">
+                    <input
+                        className="Form-input"
+                        placeholder="  "
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                    />
+                    <label className="Form-label" htmlFor="firstName">First Name</label>
+                </div>
+                <div className="Form-group">
+                    <input
+                        className="Form-input"
+                        placeholder="  "
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                    />
+                    <label className="Form-label" htmlFor="lastName">Last Name</label>
+                </div>
+                <div className="Form-group">
+                    <input
+                        type="email"
+                        className="Form-input"
+                        placeholder="  "
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                    />
+                    <label className="Form-label" htmlFor="email">Email</label>
+                </div>
+
+                {formErrors.length
+                    ? <Alert type="danger" messages={formErrors} />
+                    : null}
+
+
+                <div className="Form-group">
+                    <button
+                        className="Button"
+                        type="submit"
+                        onSubmit={handleSubmit}
+                    >
+                        Register
+                    </button>
+                </div>
 
             </form>
         </div>
@@ -91,3 +123,4 @@ function SignupForm({ signup }) {
 };
 
 export default SignupForm;
+

@@ -1,0 +1,39 @@
+.Navigation {
+    box-shadow: var(--box-shadow-1);
+    display: flex;
+    align-items: center;
+    padding: 8px 20px 8px 20px;
+    background-color: var(--color-white);
+}
+
+.Navigation-logo-box {
+    flex-grow: 1;
+}
+
+.Navigation-logo {
+    font-size: 35px !important;
+    font-family: var(--font-family-brand);
+    color: var(--color-black) !important;
+}
+
+.Navigation-logo:hover {
+    color: var(--color-secondary) !important;
+}
+
+.Navigation ul {
+    list-style: none;
+    display: flex;
+    margin-right: 25px;
+}
+
+.Navigation a {
+    text-decoration: none;
+    padding: 15px 15px 15px 15px;
+    font-size: 16px;
+    color: var(--color-primary);
+    transition: var(--transition-1);
+}
+
+.Navigation a:hover {
+    color: var(--color-primary-dark);
+}

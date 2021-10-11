@@ -1,12 +1,13 @@
 import React from "react";
 import JobCard from "./JobCard";
+import "./JobCardList.css";
 
 
 function JobCardList({ jobs, apply }) {
     console.debug("JobCardList", "jobs=", jobs);
 
     return (
-        <div>
+        <div className="JobCardList">
             {jobs.map(j => (
                 <JobCard
                     key={j.id}

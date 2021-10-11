@@ -1,0 +1,28 @@
+.JobCard {
+    margin: 35px;
+    padding: 15px;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow-2);
+}
+
+.JobCard-title {
+    font-family: var(--font-family-brand);
+    font-weight: 300;
+    font-size: 30px;
+    margin: 0px;
+}
+
+.JobCard .Button {
+    color: var(--color-black);
+    background-color: var(--color-secondary);
+}
+
+.JobCard .Button:hover {
+    color: var(--color-black);
+    background-color: var(--color-secondary-dark);
+}
+
+.JobCard .Disabled {
+    color: var(--color-gray) !important;
+    background-color: var(--color-success-light) !important;
+}

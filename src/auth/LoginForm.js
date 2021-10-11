@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import Alert from "../common/Alert";
 
 
 function LoginForm({ login }) {
@@ -11,7 +12,7 @@ function LoginForm({ login }) {
     });
 
     const [formErrors, setFormErrors] = useState([]);
-
+    console.log(formErrors);
     console.debug(
         "LoginForm",
         "login=", typeof login,
@@ -38,31 +39,50 @@ function LoginForm({ login }) {
 
 
     return (
-        <div>
-            Login Form
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username</label>
-                <input
-                    name="username"
-                    type="text"
-                    value={formData.username}
-                    onChange={handleChange}
-                />
-                <label htmlFor="password">Password</label>
-                <input
-                    name="password"
-                    value={formData.password}
-                    onChange={handleChange}
-                />
+        <div className="Form-container">
+            <h3 className="Form-title">Login Form</h3>
+            <form className="Form" onSubmit={handleSubmit}>
+                <div className="Form-group">
+                    
+                    <input 
+                        className="Form-input"
+                        placeholder="  "
+                        name="username"
+                        type="text"
+                        value={formData.username}
+                        onChange={handleChange}
+                        required
+                    />
+                    <label className="Form-label" htmlFor="username">Username</label>
+                </div>
 
-                {formErrors.length ? <p>{formErrors}</p> : null}
+                <div className="Form-group">
+                    
+                    <input
+                        className="Form-input"
+                        placeholder="  "
+                        name="password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                    />
+                    <label className="Form-label" htmlFor="password">Password</label>
+                </div>
 
-                <button
-                    type="submit"
-                    onSubmit={handleSubmit}
-                >
-                    Login
-                </button>
+                {formErrors.length
+                    ? <Alert type="danger" messages={formErrors} />
+                    : null}
+
+                
+                <div className="Form-group"> 
+                    <button
+                        className="Button"
+                        type="submit"
+                        onSubmit={handleSubmit}
+                    >
+                        Login
+                    </button>
+                </div>
 
             </form>
         </div>

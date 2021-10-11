@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import JoblyApi from "../api/api";
 import LoadingSpinner from "../common/LoadingSpinner";
 import JobCardList from "../jobs/JobCardList";
+import "./CompanyDetail.css";
 
 
 
@@ -23,9 +24,9 @@ function CompanyDetail() {
     if (!company) return <LoadingSpinner />;
 
     return (
-        <div>
-            <h4>{company.name}</h4>
-            <p>{company.description}</p>
+        <div className="CompanyDetail">
+            <h4 className="CompanyDetail-name">{company.name}</h4>
+            <p className="CompanyDetail-description">{company.description}</p>
             <JobCardList jobs={company.jobs} />
         </div>
     );

@@ -1,0 +1,29 @@
+.Homepage {
+    text-align: center;
+    margin-top: 20vh;
+}
+
+.Homepage-title {
+    font-family: var(--font-family-brand);
+    font-size: 75px;
+    color: var(--color-black);
+    font-weight: 100;
+    margin-bottom: 0px;
+}
+
+.Homepage-title-2 {
+    font-family: var(--font-family-brand);
+    font-size: 55px;
+    color: var(--color-black);
+    font-weight: 100;
+    margin-bottom: 0px;
+}
+
+.Homepage .Button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.Homepage .Button:hover {
+    background-color: var(--color-primary-dark);
+}

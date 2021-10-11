@@ -1,0 +1,36 @@
+.SearchForm-container {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.SearchForm {
+}
+
+.SearchForm-group {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.SearchForm-input {
+    width: 50%;
+    font-size: 18px;
+    padding: 13px;
+    margin-left: 0px;
+    border-radius: 0px 10px 10px 0px;
+    border: none;
+    outline: none;
+    background-color: var(--color-white);
+}
+
+.SearchForm-container .Button {
+    margin-right: 0px;
+    padding: 15px;
+    border-radius: 10px 0px 0px 10px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.SearchForm-container .Button:hover {
+    background-color: var(--color-primary-dark);
+}
+

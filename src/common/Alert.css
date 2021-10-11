@@ -1,0 +1,18 @@
+.Alert {
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+}
+
+
+.Alert-success {
+    border: 1px solid var(--color-success);
+    background-color: var(--color-success-light);
+    color: var(--color-success-dark);
+}
+
+.Alert-danger {
+    border: 1px solid var(--color-danger);
+    background-color: var(--color-danger-light);
+    color: var(--color-danger-dark);
+}

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import JoblyApi from "../api/api";
 import CompanyCard from "./CompanyCard";
 import LoadingSpinner from "../common/LoadingSpinner";
+import SearchForm from "../common/SearchForm";
+import "./CompanyList.css";
 
 
 function CompanyList() {
@@ -23,8 +25,9 @@ function CompanyList() {
      
     return (
         <div> 
+        <SearchForm searchFor={getCompanies} />
             {companies.length ? (
-                <div>
+                <div className="CompanyList">
                   {companies.map(c => (
                     <CompanyCard 
                         key={c.handle}

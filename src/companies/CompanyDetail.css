@@ -1,0 +1,17 @@
+.CompanyDetail {
+    margin: 30px;
+}
+
+.CompanyDetail-name {
+    border-bottom: 3px solid var(--color-primary);
+    padding-bottom: 5px;
+    display: inline;
+    font-size: 28px;
+    font-family: var(--font-family-brand);
+    font-weight: 300;
+    margin: 20px;
+}
+
+.CompanyDetail-description {
+    margin: 20px;
+}

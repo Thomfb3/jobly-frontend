@@ -5,6 +5,7 @@ import JoblyApi from "./api/api";
 import UserContext from "./auth/UserContext";
 import useLocalStorage from "./hooks/useLocalStorage";
 import jwt from "jsonwebtoken";
+import "./App.css"
 
 import Navigation from "./routes/Navigation";
 
